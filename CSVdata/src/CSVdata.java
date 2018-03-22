@@ -7,11 +7,12 @@ public class CSVdata {
 	public static void main(String[] args) {
 		try {
 			BufferedReader in = new BufferedReader(new FileReader(new File("books.csv")));
-			System.out.println("File read!\n");
+			System.out.println("File succesfully read! :)\n");
 			String line = in.readLine();
 			while (line != null) {
-				System.out.println(line);
-				line.split(",");
+				String[] words = line.split(",");
+				System.out.println("Title: " + words[0] + " - Price: "
+						+ words[1] + " - Author: " + words[2]);
 				line = in.readLine();
 			}
 			
